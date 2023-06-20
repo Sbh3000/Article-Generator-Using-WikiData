@@ -1,0 +1,27 @@
+
+To modify and make the code of the same format you need to change 2 portions of the code : 
+
+1: The query 
+You will find a variable named query4
+you would have to manually change the statements in the code.
+e.g.: 
+1: delete all other optional queries 
+2: add queries to the form :
+
+OPTIONAL
+      { ?item  wdt:P1448  ?Company_Official_name }
+
+//where "?item" remains the same,"wdt:P1448" is the variable you can find on wiki data "every variable has a different id"
+and "?Comany_Official_name" is the name you give to variables//
+
+3: You will find a statement before "Where" in query 1
+Statement:{"SELECT DISTINCT  ?item ?itemLabel ?itemDescription (SAMPLE(?Name) AS ?NameSample) (SAMPLE(?F_language) AS ?F_languageSample)}
+
+Change all (SAMPLE(?Name) AS ?NameSample) statements 
+where new statement is (SAMPLE(?'saved variable' AS ?'Renamed variable'))
+
+
+//END//
+
+
+With all these modifications, the code would be fully functional.
